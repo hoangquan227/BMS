@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import BottomMenuMobile from "../../components/design-system/BottomMenuMobile";
 import SidebarDesktop from "../../components/design-system/SidebarDesktop";
 import BmsActivityTracker from "./BmsActivityTracker";
+import ReleaseNotesButton from "./ReleaseNotesButton";
 import WorkSessionClock from "./WorkSessionClock";
 
 export default function AppShell({ children }) {
@@ -17,9 +18,15 @@ export default function AppShell({ children }) {
       </div>
 
       <div className="lg:pl-72">
-        <header className="sticky top-0 z-10 border-b border-bms-border bg-white px-5 py-4 transition-shadow">
-          <p className="text-sm font-semibold text-bms-primary">TCKN BMS</p>
-          <h1 className="text-lg font-semibold">Hệ thống quản lý nội bộ - Cty Kế toán dịch vụ</h1>
+        <header className="sticky top-0 z-10 border-b border-bms-border bg-white px-5 py-3 transition-shadow">
+          <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-bms-primary">TCKN BMS</p>
+              <h1 className="text-lg font-semibold">Hệ thống quản lý nội bộ - Cty Kế toán dịch vụ</h1>
+              <p className="text-xs font-black uppercase tracking-normal text-bms-success">Làm việc trong hạnh phúc</p>
+            </div>
+            <ReleaseNotesButton />
+          </div>
           <WorkSessionClock />
         </header>
 
