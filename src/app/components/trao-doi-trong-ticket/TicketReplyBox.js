@@ -4,12 +4,18 @@ import { useState } from "react";
 import TicketAttachmentUploader from "./TicketAttachmentUploader";
 import TicketCannedResponsePicker from "./TicketCannedResponsePicker";
 import TicketEmailRecipients from "./TicketEmailRecipients";
+import TicketRichTextEditor from "./TicketRichTextEditor";
+
+function stripHtml(html) {
+  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+}
 
 export default function TicketReplyBox({ ticket, onAddMessage }) {
   const [body, setBody] = useState("");
+  const plainBody = stripHtml(body);
 
   function handleSend() {
-    if (!ticket.senderEmail || !body.trim()) return;
+    if (!ticket.senderEmail || !plainBody) return;
 
     onAddMessage({
       id: `reply-${Date.now()}`,
@@ -17,7 +23,7 @@ export default function TicketReplyBox({ ticket, onAddMessage }) {
       visibility: "customer_visible",
       author: ticket.assignedStaff,
       time: "Vừa xong",
-      content: body,
+      content: plainBody,
       sendStatus: "Đã gửi",
       emailStatus: "Đã gửi",
       toEmails: [ticket.senderEmail],
@@ -33,15 +39,12 @@ export default function TicketReplyBox({ ticket, onAddMessage }) {
       </div>
       <TicketEmailRecipients ticket={ticket} />
       <TicketCannedResponsePicker />
-      <label className="grid gap-1 text-[14px] font-extrabold text-slate-800">
-        Nội dung trả lời
-        <textarea
-          className="min-h-[150px] rounded-[10px] border border-bms-border px-3 py-2 font-semibold leading-6"
-          onChange={(event) => setBody(event.target.value)}
-          placeholder="Nhập nội dung trả lời khách hàng..."
-          value={body}
-        />
-      </label>
+      <TicketRichTextEditor
+        label="Nội dung trả lời"
+        onChange={setBody}
+        placeholder="Nhập nội dung trả lời khách hàng..."
+        value={body}
+      />
       <TicketAttachmentUploader mode="reply" />
       <div className="rounded-[12px] bg-slate-50 p-3 text-[14px] font-semibold leading-6 text-slate-700">
         Trân trọng,<br />
@@ -52,7 +55,7 @@ export default function TicketReplyBox({ ticket, onAddMessage }) {
       </div>
       <div className="flex justify-end gap-2">
         <button className="rounded-bms-pill border border-bms-border px-4 py-2 text-[14px] font-extrabold text-slate-700" type="button">Lưu nháp</button>
-        <button className="rounded-bms-pill bg-bms-primary px-4 py-2 text-[14px] font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-50" disabled={!body.trim()} onClick={handleSend} type="button">
+        <button className="rounded-bms-pill bg-bms-primary px-4 py-2 text-[14px] font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-50" disabled={!plainBody} onClick={handleSend} type="button">
           Gửi trả lời cho khách
         </button>
       </div>

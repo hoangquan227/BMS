@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 import TicketAttachmentUploader from "./TicketAttachmentUploader";
+import TicketRichTextEditor from "./TicketRichTextEditor";
+
+function stripHtml(html) {
+  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+}
 
 export default function TicketInternalCommentBox({ ticket, onAddMessage }) {
   const [body, setBody] = useState("");
+  const plainBody = stripHtml(body);
 
   function handleSave() {
-    if (!body.trim()) return;
+    if (!plainBody) return;
 
     onAddMessage({
       id: `comment-${Date.now()}`,
@@ -15,7 +21,7 @@ export default function TicketInternalCommentBox({ ticket, onAddMessage }) {
       visibility: "internal_only",
       author: ticket.assignedStaff,
       time: "Vừa xong",
-      content: body,
+      content: plainBody,
       sendStatus: "Không gửi email",
       emailStatus: "Không gửi email",
       toEmails: [],
@@ -33,18 +39,15 @@ export default function TicketInternalCommentBox({ ticket, onAddMessage }) {
         Nhắc tên nội bộ
         <input className="min-h-11 rounded-[10px] border border-bms-border px-3 font-semibold" placeholder="@tên nhân viên cần phối hợp" />
       </label>
-      <label className="grid gap-1 text-[14px] font-extrabold text-slate-800">
-        Nội dung ghi chú nội bộ
-        <textarea
-          className="min-h-[150px] rounded-[10px] border border-bms-border px-3 py-2 font-semibold leading-6"
-          onChange={(event) => setBody(event.target.value)}
-          placeholder="Nhập ghi chú chỉ dùng trong nội bộ..."
-          value={body}
-        />
-      </label>
+      <TicketRichTextEditor
+        label="Nội dung ghi chú nội bộ"
+        onChange={setBody}
+        placeholder="Nhập ghi chú chỉ dùng trong nội bộ..."
+        value={body}
+      />
       <TicketAttachmentUploader mode="comment" />
       <div className="flex justify-end">
-        <button className="rounded-bms-pill bg-slate-800 px-4 py-2 text-[14px] font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-50" disabled={!body.trim()} onClick={handleSave} type="button">
+        <button className="rounded-bms-pill bg-slate-800 px-4 py-2 text-[14px] font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-50" disabled={!plainBody} onClick={handleSave} type="button">
           Lưu ghi chú nội bộ
         </button>
       </div>
