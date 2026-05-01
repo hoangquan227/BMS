@@ -19,9 +19,17 @@ function postJson(url, payload, useBeacon = false) {
   }).catch(() => {});
 }
 
+function createClientId() {
+  if (globalThis.crypto?.randomUUID) {
+    return globalThis.crypto.randomUUID();
+  }
+
+  return `bms-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 export default function BmsActivityTracker() {
   const pathname = usePathname();
-  const [sessionId] = useState(() => crypto.randomUUID());
+  const [sessionId] = useState(createClientId);
   const currentPageRef = useRef(null);
   const interactionCountRef = useRef(0);
 
