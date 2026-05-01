@@ -68,8 +68,8 @@ export const pageMetadata = {
     description: "Quản lý chứng từ, trạng thái duyệt và lịch sử xử lý.",
   },
   "tai-khoan-truy-cap": {
-    title: "Tài khoản truy cập",
-    description: "Quản lý tài khoản truy cập, quyền sử dụng và trạng thái bảo mật.",
+    title: "Tài khoản hệ thống theo khách hàng",
+    description: "Quản lý tài khoản truy cập của từng khách hàng, phân quyền xem mật khẩu, lịch sử cập nhật và lịch sử xem mật khẩu.",
   },
   "ho-tro-khach": {
     title: "Hỗ trợ khách",
