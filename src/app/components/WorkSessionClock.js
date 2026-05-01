@@ -90,8 +90,8 @@ function ClockPill({ label, value, tone = "primary" }) {
 
   return (
     <div className="min-w-0 rounded-[10px] bg-white px-3 py-1.5 ring-1 ring-bms-border">
-      <p className="truncate text-[10px] font-black uppercase text-slate-700">{label}</p>
-      <p className={`text-base font-black leading-5 ${toneClass}`}>{value}</p>
+      <p className="truncate text-[12px] font-extrabold uppercase text-slate-700">{label}</p>
+      <p className={`text-[16px] font-extrabold leading-5 ${toneClass}`}>{value}</p>
     </div>
   );
 }
@@ -105,10 +105,10 @@ function FocusList({ title, tone = "primary", items }) {
 
   return (
     <section className={`rounded-[12px] border p-3 ${toneClass}`}>
-      <p className="mb-2 text-xs font-black uppercase">{title}</p>
+      <p className="mb-2 text-[13px] font-extrabold uppercase">{title}</p>
       <ol className="space-y-1">
         {items.map((item, index) => (
-          <li className="rounded-[8px] bg-white px-3 py-2 text-xs font-extrabold leading-5 text-slate-950" key={item}>
+          <li className="rounded-[8px] bg-white px-3 py-2 text-[13px] font-extrabold leading-5 text-slate-950" key={item}>
             {index + 1}. {item}
           </li>
         ))}
@@ -185,7 +185,7 @@ export default function WorkSessionClock() {
     <section className="mt-2 rounded-[12px] border border-bms-border bg-bms-subtle px-3 py-2">
       <div className="flex flex-col gap-2 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex min-w-0 flex-1 flex-col gap-2">
-          <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-sm font-black text-slate-950">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-[14px] font-extrabold text-slate-950">
             <span>
               Thu nhập tháng: <span className="text-bms-success">11.900.000 đ</span>
             </span>
@@ -205,11 +205,11 @@ export default function WorkSessionClock() {
             <ClockPill label="Giờ ngoài hệ thống" tone="danger" value={formatDuration(secondsOutsideSystem)} />
             <div className="flex min-w-0 items-center gap-2 rounded-[10px] bg-white px-3 py-1.5 ring-1 ring-bms-border">
               <div className="min-w-0 flex-1">
-                <p className="truncate text-[10px] font-black uppercase text-slate-700">Giờ làm cơ quan nhà nước</p>
-                <p className="text-base font-black leading-5 text-bms-success">{formatDuration(secondsGovernmentWork)}</p>
+                <p className="truncate text-[12px] font-extrabold uppercase text-slate-700">Giờ làm cơ quan nhà nước</p>
+                <p className="text-[16px] font-extrabold leading-5 text-bms-success">{formatDuration(secondsGovernmentWork)}</p>
               </div>
               <button
-                className={`shrink-0 rounded-bms-pill px-3 py-1.5 text-xs font-black transition hover:-translate-y-0.5 active:translate-y-px ${
+                className={`shrink-0 rounded-bms-pill px-3 py-1.5 text-[13px] font-extrabold transition hover:-translate-y-0.5 active:translate-y-px ${
                   governmentMode ? "bg-bms-success text-white" : "bg-blue-50 text-bms-primary"
                 }`}
                 onClick={enableGovernmentWork}
@@ -230,7 +230,7 @@ export default function WorkSessionClock() {
       </div>
 
       {displayMode === "compact" ? (
-        <div className="mt-2 rounded-[10px] bg-white px-3 py-2 text-xs font-black text-slate-900 ring-1 ring-bms-border">
+        <div className="mt-2 rounded-[10px] bg-white px-3 py-2 text-[13px] font-extrabold text-slate-900 ring-1 ring-bms-border">
           3 mục tiêu hôm nay · 3 công việc chưa hoàn thành · 3 việc cải thiện thu nhập
         </div>
       ) : null}
@@ -240,7 +240,7 @@ export default function WorkSessionClock() {
           <FocusList items={todayGoals} title="3 mục tiêu hôm nay" tone="success" />
           <FocusList items={unfinishedTasks} title="3 công việc chưa hoàn thành" tone="danger" />
           <FocusList items={incomeActions} title="3 việc cải thiện thu nhập" tone="primary" />
-          <div className="rounded-[10px] bg-white px-3 py-2 text-xs font-bold text-slate-800 ring-1 ring-bms-border xl:col-span-3">
+          <div className="rounded-[10px] bg-white px-3 py-2 text-[13px] font-bold text-slate-800 ring-1 ring-bms-border xl:col-span-3">
             <span className="font-black text-bms-success">Làm việc trong hạnh phúc:</span>{" "}
             rõ việc quan trọng, biết việc còn nợ, thấy cơ hội tăng thu nhập và có quyền thu gọn khi cần tập trung.
             <span className="ml-3">DMS: <span className="text-bms-money">{locationText}</span></span>
@@ -267,7 +267,7 @@ function DisplayMenu({ currentMode, menuOpen, onChange, onToggle }) {
 
       {menuOpen ? (
         <div className="absolute right-0 z-50 mt-2 w-[280px] rounded-[10px] border border-bms-border bg-white p-2 shadow-bms">
-          <p className="px-3 py-2 text-xs font-black uppercase text-slate-700">Hiển thị thanh thông tin</p>
+          <p className="px-3 py-2 text-[13px] font-extrabold uppercase text-slate-700">Hiển thị thanh thông tin</p>
           {displayModes.map((mode) => (
             <button
               className="flex w-full gap-2 rounded-[8px] px-3 py-2 text-left transition hover:bg-blue-50"
@@ -275,10 +275,10 @@ function DisplayMenu({ currentMode, menuOpen, onChange, onToggle }) {
               onClick={() => onChange(mode.id)}
               type="button"
             >
-              <span className="w-4 text-sm font-black text-bms-primary">{currentMode === mode.id ? "✓" : ""}</span>
+              <span className="w-4 text-[14px] font-extrabold text-bms-primary">{currentMode === mode.id ? "✓" : ""}</span>
               <span>
-                <span className="block text-sm font-extrabold text-slate-950">{mode.label}</span>
-                <span className="block text-xs font-semibold text-slate-600">{mode.description}</span>
+                <span className="block text-[14px] font-extrabold text-slate-950">{mode.label}</span>
+                <span className="block text-[13px] font-semibold text-slate-600">{mode.description}</span>
               </span>
             </button>
           ))}

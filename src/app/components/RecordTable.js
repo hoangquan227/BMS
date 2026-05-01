@@ -19,11 +19,11 @@ export default function RecordTable({ columns = [], rows = [] }) {
       </div>
 
       <div className="hidden overflow-x-auto md:block">
-        <table className="w-full min-w-[760px] text-left text-sm">
+        <table className="w-full min-w-[760px] text-left text-[14px]">
           <thead className="bg-bms-subtle text-bms-muted">
             <tr>
               {columns.map((column) => (
-                <th className="px-4 py-3 font-semibold" key={column.key}>
+                <th className="px-4 py-3 font-extrabold" key={column.key}>
                   {column.label}
                 </th>
               ))}
@@ -33,7 +33,7 @@ export default function RecordTable({ columns = [], rows = [] }) {
             {rows.map((row, index) => (
               <tr className="transition-colors hover:bg-bms-subtle" key={row.id || index}>
                 {columns.map((column) => (
-                  <td className="px-4 py-4 text-bms-text" key={column.key}>
+                  <td className="px-4 py-4 font-semibold text-bms-text" key={column.key}>
                     {column.type === "status" ? <StatusBadge status={row[column.key]} /> : row[column.key]}
                   </td>
                 ))}
@@ -45,4 +45,3 @@ export default function RecordTable({ columns = [], rows = [] }) {
     </div>
   );
 }
-

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --font-bms: "Monteras", "Inter", Arial, sans-serif;
   --color-bg-main: #ffffff;
   --color-bg-subtle: #f5f7fb;
   --color-bg-card: #ffffff;
@@ -23,6 +24,13 @@
   --space-6: 24px;
   --space-8: 32px;
   --shadow-card: 0 10px 24px rgba(16, 32, 51, 0.08);
+  --text-page-title: 28px;
+  --text-section-title: 18px;
+  --text-body: 15px;
+  --text-table: 14px;
+  --text-note: 13px;
+  --text-menu-parent: 15px;
+  --text-menu-child: 14px;
 }
 
 @theme inline {
@@ -40,7 +48,7 @@
   --color-bms-danger: var(--color-danger);
   --color-bms-warning: var(--color-warning);
   --color-bms-money: var(--color-money);
-  --font-sans: "Monteras", "Inter", Arial, sans-serif;
+  --font-sans: var(--font-bms);
   --font-mono: "Courier New", Courier, monospace;
   --radius-bms-card: var(--radius-card);
   --radius-bms-control: var(--radius-control);
@@ -59,8 +67,40 @@ body {
   margin: 0;
   background: var(--color-bg-subtle);
   color: var(--color-text-main);
-  font-family: "Monteras", "Inter", Arial, sans-serif;
-  font-size: 16px;
+  font-family: var(--font-bms);
+  font-size: var(--text-body);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-main);
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+small {
+  font-size: var(--text-note);
+}
+
+table {
+  font-size: var(--text-table);
 }
 
 @keyframes toastIn {
@@ -80,6 +120,60 @@ input,
 select,
 textarea {
   font: inherit;
+  letter-spacing: 0;
+}
+
+::placeholder {
+  color: #7a8796;
+  opacity: 1;
+}
+
+.text-xs,
+.text-\[10px\],
+.text-\[11px\],
+.text-\[12px\] {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.text-sm,
+.text-\[13px\],
+.text-\[14px\] {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.text-base,
+.text-\[15px\] {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.text-lg,
+.text-\[16px\],
+.text-\[17px\],
+.text-\[18px\] {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.text-xl {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.text-2xl {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.text-3xl {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.font-black {
+  font-weight: 800;
 }
 
 @media (prefers-reduced-motion: reduce) {

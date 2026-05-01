@@ -8,9 +8,9 @@ const buttonStyles = {
 };
 
 const sizeStyles = {
-  sm: "min-h-10 px-3 text-sm",
-  md: "min-h-11 px-4 text-base",
-  lg: "min-h-12 px-5 text-base",
+  sm: "min-h-10 px-3 text-[14px]",
+  md: "min-h-11 px-4 text-[15px]",
+  lg: "min-h-12 px-5 text-[16px]",
 };
 
 export default function Button({
@@ -30,7 +30,7 @@ export default function Button({
     <button
       aria-busy={loading}
       className={joinClassNames(
-        "inline-flex items-center justify-center gap-2 rounded-bms-control font-semibold transition duration-150",
+        "inline-flex items-center justify-center gap-2 rounded-bms-control font-extrabold transition duration-150",
         "active:translate-y-px active:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100",
         "disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:shadow-none",
         buttonStyles[variant],

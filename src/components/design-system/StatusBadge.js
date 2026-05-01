@@ -75,7 +75,7 @@ export default function StatusBadge({ status = "Đang làm", className = "" }) {
   return (
     <span
       className={joinClassNames(
-        "inline-flex rounded-bms-pill px-3 py-1 text-sm font-semibold ring-1 transition-colors",
+        "inline-flex rounded-bms-pill px-3 py-1 text-[13px] font-extrabold leading-5 ring-1 transition-colors",
         statusStyles[status] || "bg-slate-100 text-slate-700 ring-slate-200",
         className
       )}

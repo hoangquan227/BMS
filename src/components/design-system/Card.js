@@ -8,9 +8,8 @@ export default function Card({ title = "Thông tin cần xử lý", children, cl
         className
       )}
     >
-      <h2 className="text-lg font-semibold text-bms-text">{title}</h2>
+      <h2 className="text-[18px] font-extrabold leading-6 text-bms-text">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
   );
 }
-

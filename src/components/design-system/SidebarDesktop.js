@@ -187,7 +187,7 @@ function SectionLink({ href, title, active }) {
     <Link
       aria-current={active ? "page" : undefined}
       className={joinClassNames(
-        "flex min-h-11 items-center rounded-[12px] px-4 py-3 text-[16px] font-extrabold uppercase leading-5 transition active:translate-y-px",
+        "flex min-h-11 items-center rounded-[12px] px-4 py-3 text-[15px] font-extrabold uppercase leading-5 transition active:translate-y-px",
         active ? "bg-[#0047ab] text-white shadow-[0_8px_18px_rgba(0,71,171,0.24)]" : "bg-white text-[#003b8f] ring-1 ring-blue-100 hover:bg-blue-50"
       )}
       href={href}
@@ -297,7 +297,7 @@ export default function SidebarDesktop({ activeHref = "/tong-quan" }) {
     <aside className="hidden h-screen w-72 shrink-0 overflow-y-auto border-r border-slate-200 bg-white px-5 py-6 font-sans lg:block">
       <div className="mb-7">
         <p className="text-[12px] font-extrabold uppercase leading-4 text-[#0047ab]">TCKN BMS</p>
-        <h1 className="mt-2 text-[17px] font-extrabold leading-6 text-[#0047ab]">
+        <h1 className="mt-2 text-[18px] font-extrabold leading-6 text-[#0047ab]">
           Hệ thống quản lý nội bộ
           <span className="block text-bms-success">Cty Kế toán dịch vụ</span>
         </h1>
@@ -372,7 +372,7 @@ export default function SidebarDesktop({ activeHref = "/tong-quan" }) {
               <button
                 aria-expanded={isSectionOpen}
                 className={joinClassNames(
-                  "flex min-h-11 w-full items-center justify-between rounded-[12px] px-4 py-3 text-left text-[16px] font-extrabold uppercase leading-5 transition active:translate-y-px",
+                  "flex min-h-11 w-full items-center justify-between rounded-[12px] px-4 py-3 text-left text-[15px] font-extrabold uppercase leading-5 transition active:translate-y-px",
                   isActiveSection ? "bg-[#0047ab] text-white shadow-[0_8px_18px_rgba(0,71,171,0.24)]" : "bg-white text-[#003b8f] ring-1 ring-blue-100 hover:bg-blue-50"
                 )}
                 onClick={() => toggleSection(sectionKey)}
@@ -395,7 +395,7 @@ export default function SidebarDesktop({ activeHref = "/tong-quan" }) {
                         <button
                           aria-expanded={isGroupOpen}
                           className={joinClassNames(
-                            "flex min-h-10 w-full items-center justify-between rounded-[10px] px-3 py-2 text-left text-[15px] font-extrabold uppercase leading-5 transition active:translate-y-px",
+                            "flex min-h-10 w-full items-center justify-between rounded-[10px] px-3 py-2 text-left text-[14px] font-extrabold uppercase leading-5 transition active:translate-y-px",
                             isActiveGroup ? "bg-blue-100 text-[#0047ab]" : "text-[#0047ab] hover:bg-blue-50"
                           )}
                           onClick={() => toggleGroup(groupKey)}
@@ -416,7 +416,7 @@ export default function SidebarDesktop({ activeHref = "/tong-quan" }) {
       </nav>
 
       <div className="mt-8 border-t border-slate-300 pt-5">
-        <button className="flex min-h-11 w-full items-center rounded-[12px] px-4 py-3 text-[16px] font-extrabold uppercase text-[#003b8f] ring-1 ring-blue-100 transition hover:bg-blue-50" type="button">
+        <button className="flex min-h-11 w-full items-center rounded-[12px] px-4 py-3 text-[15px] font-extrabold uppercase text-[#003b8f] ring-1 ring-blue-100 transition hover:bg-blue-50" type="button">
           Đăng xuất
         </button>
       </div>

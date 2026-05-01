@@ -18,12 +18,12 @@ export default function AppShell({ children }) {
       </div>
 
       <div className="lg:pl-72">
-        <header className="sticky top-0 z-10 border-b border-bms-border bg-white px-5 py-3 transition-shadow">
+        <header className="sticky top-0 z-10 border-b border-bms-border bg-white px-5 py-3 font-sans transition-shadow">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
             <div>
-              <p className="text-sm font-semibold text-bms-primary">TCKN BMS</p>
-              <h1 className="text-lg font-semibold">Hệ thống quản lý nội bộ - Cty Kế toán dịch vụ</h1>
-              <p className="text-xs font-black uppercase tracking-normal text-bms-success">Làm việc trong hạnh phúc</p>
+              <p className="text-[13px] font-bold text-bms-primary">TCKN BMS</p>
+              <h1 className="text-[18px] font-extrabold leading-6">Hệ thống quản lý nội bộ - Cty Kế toán dịch vụ</h1>
+              <p className="text-[12px] font-extrabold uppercase tracking-normal text-bms-success">Làm việc trong hạnh phúc</p>
             </div>
             <ReleaseNotesButton />
           </div>

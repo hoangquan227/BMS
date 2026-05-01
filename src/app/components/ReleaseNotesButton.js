@@ -153,7 +153,7 @@ export default function ReleaseNotesButton() {
   return (
     <div className="relative">
       <button
-        className="rounded-bms-pill border border-bms-border bg-white px-3 py-2 text-xs font-black text-bms-primary shadow-sm transition hover:border-bms-primary hover:bg-blue-50 active:translate-y-px"
+        className="rounded-bms-pill border border-bms-border bg-white px-3 py-2 text-[13px] font-extrabold text-bms-primary shadow-sm transition hover:border-bms-primary hover:bg-blue-50 active:translate-y-px"
         onClick={() => setOpen((current) => !current)}
         type="button"
       >
@@ -164,8 +164,8 @@ export default function ReleaseNotesButton() {
         <div className="absolute right-0 z-50 mt-2 flex max-h-[76vh] w-[min(94vw,760px)] flex-col overflow-hidden rounded-[16px] border border-bms-border bg-white shadow-bms">
           <div className="flex items-start justify-between gap-3 border-b border-bms-border px-5 py-4">
             <div>
-              <h2 className="text-lg font-black text-slate-950">Nhật ký chỉnh sửa</h2>
-              <p className="text-sm font-semibold text-slate-600">Lịch sử cập nhật tính năng TCKN BMS</p>
+              <h2 className="text-[18px] font-extrabold leading-6 text-slate-950">Nhật ký chỉnh sửa</h2>
+              <p className="text-[14px] font-semibold text-slate-600">Lịch sử cập nhật tính năng TCKN BMS</p>
             </div>
             <button
               className="rounded-[8px] px-2 py-1 text-lg font-black leading-none text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
@@ -182,7 +182,7 @@ export default function ReleaseNotesButton() {
               <div className="max-h-[58vh] space-y-1 overflow-auto pr-1">
                 {groups.map((group) => (
                   <button
-                    className={`flex w-full items-center justify-between gap-2 rounded-[10px] px-3 py-2 text-left text-sm font-extrabold transition ${
+                    className={`flex w-full items-center justify-between gap-2 rounded-[10px] px-3 py-2 text-left text-[14px] font-extrabold transition ${
                       activeGroup === group.name
                         ? "bg-white text-bms-primary shadow-sm ring-1 ring-blue-100"
                         : "text-slate-700 hover:bg-white"
@@ -192,7 +192,7 @@ export default function ReleaseNotesButton() {
                     type="button"
                   >
                     <span className="truncate">{group.name}</span>
-                    <span className="rounded-bms-pill bg-slate-200 px-2 py-0.5 text-xs font-black text-slate-700">{group.count}</span>
+                    <span className="rounded-bms-pill bg-slate-200 px-2 py-0.5 text-[13px] font-extrabold text-slate-700">{group.count}</span>
                   </button>
                 ))}
               </div>
@@ -202,11 +202,11 @@ export default function ReleaseNotesButton() {
               <div className="space-y-5">
                 {releases.map((release) => (
                   <section className="relative pl-16" key={`${release.version}-${release.date}`}>
-                    <div className="absolute left-0 top-0 rounded-bms-pill bg-slate-950 px-3 py-1 text-xs font-black text-white">
+                    <div className="absolute left-0 top-0 rounded-bms-pill bg-slate-950 px-3 py-1 text-[13px] font-extrabold text-white">
                       {release.version}
                     </div>
                     <div className="mb-2 flex items-center gap-2">
-                      <span className="text-xs font-bold text-slate-500">{release.date}</span>
+                      <span className="text-[13px] font-bold text-slate-500">{release.date}</span>
                       <span className="h-px flex-1 border-t border-dashed border-bms-border" />
                     </div>
 
@@ -214,20 +214,20 @@ export default function ReleaseNotesButton() {
                       {release.items.map((item) => (
                         <article className="grid gap-2 rounded-[10px] border border-transparent px-1 py-1 sm:grid-cols-[74px_1fr]" key={item.title}>
                           <span
-                            className={`h-fit rounded-[8px] border px-2 py-1 text-center text-xs font-black ${
+                            className={`h-fit rounded-[8px] border px-2 py-1 text-center text-[13px] font-extrabold ${
                               typeStyle[item.type] || typeStyle["Cải tiến"]
                             }`}
                           >
                             {item.type}
                           </span>
                           <div>
-                            <p className="text-sm font-black leading-6 text-slate-950">
+                            <p className="text-[14px] font-extrabold leading-6 text-slate-950">
                               {item.title}
-                              <span className="ml-2 rounded-bms-pill bg-cyan-50 px-2 py-0.5 text-xs font-black text-cyan-700">
+                              <span className="ml-2 rounded-bms-pill bg-cyan-50 px-2 py-0.5 text-[13px] font-extrabold text-cyan-700">
                                 {item.group}
                               </span>
                             </p>
-                            <p className="text-sm font-semibold leading-6 text-slate-600">{item.detail}</p>
+                            <p className="text-[14px] font-semibold leading-6 text-slate-600">{item.detail}</p>
                           </div>
                         </article>
                       ))}
@@ -238,7 +238,7 @@ export default function ReleaseNotesButton() {
             </main>
           </div>
 
-          <footer className="border-t border-bms-border bg-slate-50 px-5 py-2 text-xs font-semibold text-slate-600">
+          <footer className="border-t border-bms-border bg-slate-50 px-5 py-2 text-[13px] font-semibold text-slate-600">
             Cập nhật lần cuối: 2026-05-01 · Phiên bản mới nhất: v1.4.0
           </footer>
         </div>
