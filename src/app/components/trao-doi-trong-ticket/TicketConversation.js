@@ -9,9 +9,11 @@ function buildInitialMessages(ticket) {
   return [
     {
       id: "customer-start",
+      side: "customer",
       messageType: "customer_message",
       visibility: "customer_visible",
       author: ticket.senderName,
+      organization: ticket.company,
       time: ticket.createdAt,
       content: ticket.content,
       sendStatus: "Đã nhận",
@@ -21,9 +23,11 @@ function buildInitialMessages(ticket) {
     },
     {
       id: "internal-1",
+      side: "tckn",
       messageType: "internal_comment",
       visibility: "internal_only",
       author: ticket.assignedStaff,
+      organization: "Tài Chính Khởi Nghiệp",
       time: "19:41 08/04/2026",
       content: "Đã tiếp nhận thông tin từ khách. Cần kiểm tra log và xác nhận nguyên nhân trước khi trả lời ra ngoài.",
       sendStatus: "Không gửi email",
@@ -33,15 +37,31 @@ function buildInitialMessages(ticket) {
     },
     {
       id: "reply-1",
+      side: "tckn",
       messageType: "agent_reply",
       visibility: "customer_visible",
       author: ticket.assignedStaff,
+      organization: "Tài Chính Khởi Nghiệp",
       time: ticket.updatedAt,
       content: "Bên em đã tiếp nhận yêu cầu và đang kiểm tra. Em sẽ phản hồi lại khách ngay khi có kết quả xác nhận.",
       sendStatus: "Đã gửi",
       emailStatus: "Đã gửi",
       toEmails: [ticket.senderEmail],
       attachments: [],
+    },
+    {
+      id: "customer-reply-demo",
+      side: "customer",
+      messageType: "customer_message",
+      visibility: "customer_visible",
+      author: ticket.senderName,
+      organization: ticket.company,
+      time: "09:15 10/04/2026",
+      content: "Cảm ơn TCKN. Bên mình đã thử lại và hệ thống đã ổn hơn. Nhờ các bạn gửi thêm nguyên nhân lỗi để bên mình lưu hồ sơ nội bộ.",
+      sendStatus: "Đã nhận",
+      emailStatus: "Email khách phản hồi",
+      toEmails: ["hotro@tckn.vn"],
+      attachments: ["email-phan-hoi-khach.html"],
     },
   ];
 }
@@ -52,7 +72,7 @@ export default function TicketConversation({ ticket }) {
   const [messages, setMessages] = useState(initialMessages);
 
   function addMessage(message) {
-    setMessages((current) => [message, ...current]);
+    setMessages((current) => [{ ...message, side: "tckn", organization: "Tài Chính Khởi Nghiệp" }, ...current]);
   }
 
   return (
@@ -60,7 +80,7 @@ export default function TicketConversation({ ticket }) {
       <div className="mb-4 flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <h3 className="text-[18px] font-extrabold text-slate-950">Trao đổi trong ticket</h3>
-          <p className="text-[14px] font-semibold text-slate-600">Reply gửi email cho khách. Comment là ghi chú nội bộ, khách hàng không thấy.</p>
+          <p className="text-[14px] font-semibold text-slate-600">Tin của Tài Chính Khởi Nghiệp nằm bên trái. Tin của khách hàng nằm bên phải.</p>
         </div>
         <div className="inline-flex rounded-[12px] border border-bms-border bg-slate-50 p-1">
           <button
