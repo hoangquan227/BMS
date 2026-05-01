@@ -196,7 +196,7 @@ function ProgressCircle({ progress, done }) {
   return (
     <div
       className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-4 bg-white text-[11px] font-extrabold ${
-        done ? "border-orange-400 text-orange-500" : progress > 0 ? "border-green-300 text-green-600" : "border-slate-200 text-red-500"
+        done ? "border-bms-success text-bms-success" : progress > 0 ? "border-bms-success text-bms-success" : "border-slate-200 text-red-500"
       }`}
     >
       {progress}%
@@ -213,7 +213,7 @@ function TaskListGroup({ title, count, color, tasksInGroup }) {
       </div>
       <div className="divide-y divide-dashed divide-slate-300">
         {tasksInGroup.map((task, index) => (
-          <article className={index % 2 === 0 ? "grid gap-3 bg-white p-3 md:grid-cols-[auto_1fr_210px]" : "grid gap-3 bg-[#eefdfb] p-3 md:grid-cols-[auto_1fr_210px]"} key={task.name}>
+          <article className={index % 2 === 0 ? "grid gap-3 bg-white p-3 md:grid-cols-[auto_1fr_210px]" : "grid gap-3 bg-blue-50/40 p-3 md:grid-cols-[auto_1fr_210px]"} key={task.name}>
             <ProgressCircle done={task.status === "Hoàn thành"} progress={task.progress} />
             <div>
               <p className="font-bold text-bms-primary">{task.name}</p>
@@ -237,7 +237,7 @@ function TaskListGroup({ title, count, color, tasksInGroup }) {
 function ListView() {
   const groups = [
     { title: "Đang tiến hành", color: "bg-green-600", name: "Đang tiến hành" },
-    { title: "Chưa bắt đầu", color: "bg-sky-300 text-slate-800", name: "Chưa bắt đầu" },
+    { title: "Chưa bắt đầu", color: "bg-blue-50 text-bms-primary", name: "Chưa bắt đầu" },
     { title: "Hoàn thành", color: "bg-bms-primary", name: "Hoàn thành" },
   ];
 
@@ -341,13 +341,13 @@ function DetailManagementView() {
         <table className="min-w-[760px] border-collapse text-center text-sm">
           <thead>
             <tr>
-              <th className="border border-slate-400 bg-yellow-300 px-3 py-2 font-bold" colSpan={5}>
+              <th className="border border-slate-400 bg-blue-50 px-3 py-2 font-bold" colSpan={5}>
                 Phân công
               </th>
             </tr>
             <tr>
               {["Người thực hiện", "Người chịu trách nhiệm cuối cùng", "Người hỗ trợ", "Người tham vấn", "Người cần được thông báo"].map((column) => (
-                <th className="border border-slate-400 bg-yellow-300 px-3 py-2 font-bold" key={column}>
+                <th className="border border-slate-400 bg-blue-50 px-3 py-2 font-bold" key={column}>
                   {column}
                 </th>
               ))}
@@ -368,7 +368,7 @@ function DetailManagementView() {
           <thead>
             <tr>
               {columns.map((column) => (
-                <th className="border border-slate-700 bg-yellow-300 px-3 py-3 align-top font-extrabold text-slate-950" key={column}>
+                <th className="border border-slate-700 bg-blue-50 px-3 py-3 align-top font-extrabold text-slate-950" key={column}>
                   {column}
                 </th>
               ))}
@@ -376,7 +376,7 @@ function DetailManagementView() {
           </thead>
           <tbody>
             {detailRows.map((row, index) => (
-              <tr className={index % 2 === 0 ? "bg-[#f9e8df]" : "bg-[#f4d8cc]"} key={row.strategy}>
+              <tr className={index % 2 === 0 ? "bg-white" : "bg-blue-50/40"} key={row.strategy}>
                 <td className="border border-slate-700 px-3 py-4 align-top">{row.strategy}</td>
                 <td className="border border-slate-700 px-3 py-4 align-top">{row.goal}</td>
                 <td className="border border-slate-700 px-3 py-4 align-top">{row.budget}</td>

@@ -3,20 +3,20 @@ const fileGroups = [
     title: "Pháp lý",
     color: "text-bms-success",
     icon: (
-      <svg aria-hidden="true" className="h-10 w-10 text-amber-400" viewBox="0 0 48 48" fill="none">
+      <svg aria-hidden="true" className="h-10 w-10 text-bms-success" viewBox="0 0 48 48" fill="none">
         <path d="M6 14a5 5 0 0 1 5-5h10l4 5h12a5 5 0 0 1 5 5v17a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V14Z" fill="currentColor" />
-        <path d="M6 18h36v18a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V18Z" fill="#fbbf24" />
+        <path d="M6 18h36v18a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V18Z" fill="#00a859" />
       </svg>
     ),
   },
   {
     title: "Sổ sách",
-    color: "text-orange-600",
+    color: "text-bms-primary",
     icon: (
-      <svg aria-hidden="true" className="h-10 w-10 text-yellow-400" viewBox="0 0 48 48" fill="none">
+      <svg aria-hidden="true" className="h-10 w-10 text-bms-primary" viewBox="0 0 48 48" fill="none">
         <path d="M14 7h22a4 4 0 0 1 4 4v30H14a6 6 0 0 1-6-6V13a6 6 0 0 1 6-6Z" fill="currentColor" />
-        <path d="M14 12h22M14 18h22M14 24h22M14 30h22" stroke="#d97706" strokeWidth="2" strokeLinecap="round" />
-        <path d="M12 10v28" stroke="#8b5cf6" strokeWidth="4" strokeLinecap="round" />
+        <path d="M14 12h22M14 18h22M14 24h22M14 30h22" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 10v28" stroke="#00a859" strokeWidth="4" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -26,31 +26,31 @@ const fileGroups = [
     icon: (
       <svg aria-hidden="true" className="h-10 w-10 text-slate-300" viewBox="0 0 48 48" fill="none">
         <path d="M13 6h15l9 9v27H13V6Z" fill="currentColor" />
-        <path d="M28 6v10h9" fill="#e8edf5" />
-        <path d="M18 24h14M18 30h14M18 36h9" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" />
+        <path d="M28 6v10h9" fill="#f6f9fd" />
+        <path d="M18 24h14M18 30h14M18 36h9" stroke="#0057b8" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
   {
     title: "Thuế",
-    color: "text-bms-danger",
+    color: "text-bms-primary",
     icon: (
-      <svg aria-hidden="true" className="h-10 w-10 text-rose-500" viewBox="0 0 48 48" fill="none">
+      <svg aria-hidden="true" className="h-10 w-10 text-bms-primary" viewBox="0 0 48 48" fill="none">
         <path d="M12 34 31 15l6 6-19 19H12v-6Z" fill="currentColor" />
-        <path d="m29 17 4-7 5 5-7 4-2-2Z" fill="#fb7185" />
-        <path d="M12 34 8 30M18 40l-4 4M30 28l6 6" stroke="#fbbf24" strokeWidth="3" strokeLinecap="round" />
+        <path d="m29 17 4-7 5 5-7 4-2-2Z" fill="#0057b8" opacity="0.7" />
+        <path d="M12 34 8 30M18 40l-4 4M30 28l6 6" stroke="#00a859" strokeWidth="3" strokeLinecap="round" />
       </svg>
     ),
   },
   {
     title: "BHXH",
-    color: "text-cyan-600",
+    color: "text-bms-success",
     icon: (
-      <svg aria-hidden="true" className="h-10 w-10 text-violet-700" viewBox="0 0 48 48" fill="none">
+      <svg aria-hidden="true" className="h-10 w-10 text-bms-success" viewBox="0 0 48 48" fill="none">
         <circle cx="18" cy="16" r="6" fill="currentColor" />
-        <circle cx="31" cy="16" r="6" fill="#6d28d9" />
+        <circle cx="31" cy="16" r="6" fill="#0057b8" />
         <path d="M8 36c1-8 6-12 13-12s12 4 13 12H8Z" fill="currentColor" />
-        <path d="M22 36c1-7 5-11 11-11s10 4 11 11H22Z" fill="#6d28d9" />
+        <path d="M22 36c1-7 5-11 11-11s10 4 11 11H22Z" fill="#0057b8" />
       </svg>
     ),
   },

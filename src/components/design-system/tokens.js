@@ -1,17 +1,17 @@
 export const designTokens = {
   color: {
-    primary: "#1f6feb",
-    primaryStrong: "#1557b8",
-    success: "#168a4a",
+    primary: "#0057b8",
+    primaryStrong: "#004494",
+    success: "#00a859",
     danger: "#d92d20",
     warning: "#d97706",
     backgroundMain: "#ffffff",
-    backgroundSubtle: "#f5f7fb",
+    backgroundSubtle: "#f6f9fd",
     card: "#ffffff",
-    textMain: "#102033",
-    textMuted: "#5d6b7a",
-    border: "#d8e0ea",
-    money: "#12304a",
+    textMain: "#0f172a",
+    textMuted: "#536273",
+    border: "#dbe6f3",
+    money: "#0f3a66",
   },
   font: {
     sans: '"Monteras", "Inter", Arial, sans-serif',
@@ -39,4 +39,3 @@ export const designTokens = {
     badge: "999px",
   },
 };
-

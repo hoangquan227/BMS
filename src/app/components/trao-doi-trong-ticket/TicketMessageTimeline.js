@@ -13,8 +13,8 @@ const typeStyle = {
   },
   internal_comment: {
     label: "Nội bộ",
-    className: "border-amber-100 bg-amber-50 text-amber-700",
-    dot: "bg-amber-500",
+    className: "border-slate-200 bg-slate-50 text-slate-700",
+    dot: "bg-slate-500",
   },
   system_event: {
     label: "Hệ thống",

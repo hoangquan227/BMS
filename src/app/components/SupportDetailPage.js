@@ -59,7 +59,7 @@ export default function SupportDetailPage({ ticket }) {
                 <p className="mt-1 text-[15px] font-extrabold text-slate-950">{ticket.senderName}</p>
                 <p className="text-[13px] font-semibold text-slate-700">{ticket.senderPhone} · {ticket.senderEmail}</p>
               </div>
-              <div className="rounded-[12px] border border-amber-100 bg-amber-50 p-3">
+              <div className="rounded-[12px] border border-blue-100 bg-blue-50 p-3">
                 <p className="text-[13px] font-extrabold uppercase text-bms-warning">Nhân viên xử lý</p>
                 <p className="mt-1 text-[15px] font-extrabold text-slate-950">{ticket.assignedStaff}</p>
                 <p className="text-[13px] font-semibold text-slate-700">{ticket.assignedTeam}</p>

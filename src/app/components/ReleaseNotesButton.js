@@ -223,7 +223,7 @@ export default function ReleaseNotesButton() {
                           <div>
                             <p className="text-[14px] font-extrabold leading-6 text-slate-950">
                               {item.title}
-                              <span className="ml-2 rounded-bms-pill bg-cyan-50 px-2 py-0.5 text-[13px] font-extrabold text-cyan-700">
+                              <span className="ml-2 rounded-bms-pill bg-blue-50 px-2 py-0.5 text-[13px] font-extrabold text-bms-primary">
                                 {item.group}
                               </span>
                             </p>

@@ -104,8 +104,8 @@ export default function CustomerAccessAccountsPage({ customer }) {
             <InfoRow label="Nhóm dịch vụ" value={customer.services} />
             <InfoRow label="Trạng thái khách hàng" value={customer.status} />
           </div>
-          <div className="rounded-[12px] border border-amber-100 bg-amber-50 p-4">
-            <p className="text-[13px] font-extrabold uppercase text-bms-warning">Ghi chú bảo mật</p>
+          <div className="rounded-[12px] border border-blue-100 bg-blue-50 p-4">
+            <p className="text-[13px] font-extrabold uppercase text-bms-primary">Ghi chú bảo mật</p>
             <p className="mt-2 text-[14px] font-bold leading-6 text-slate-900">{customer.securityNote}</p>
             <p className="mt-3 text-[13px] font-semibold text-slate-700">
               Mật khẩu không hiển thị trong danh sách. API danh sách không trả về mật khẩu.

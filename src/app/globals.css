@@ -3,17 +3,17 @@
 :root {
   --font-bms: "Monteras", "Inter", Arial, sans-serif;
   --color-bg-main: #ffffff;
-  --color-bg-subtle: #f5f7fb;
+  --color-bg-subtle: #f6f9fd;
   --color-bg-card: #ffffff;
-  --color-text-main: #102033;
-  --color-text-muted: #5d6b7a;
-  --color-border: #d8e0ea;
-  --color-primary: #1f6feb;
-  --color-primary-strong: #1557b8;
-  --color-success: #168a4a;
+  --color-text-main: #0f172a;
+  --color-text-muted: #536273;
+  --color-border: #dbe6f3;
+  --color-primary: #0057b8;
+  --color-primary-strong: #004494;
+  --color-success: #00a859;
   --color-danger: #d92d20;
   --color-warning: #d97706;
-  --color-money: #12304a;
+  --color-money: #0f3a66;
   --radius-card: 20px;
   --radius-control: 14px;
   --radius-pill: 999px;
@@ -23,7 +23,7 @@
   --space-4: 16px;
   --space-6: 24px;
   --space-8: 32px;
-  --shadow-card: 0 10px 24px rgba(16, 32, 51, 0.08);
+  --shadow-card: 0 10px 24px rgba(15, 23, 42, 0.08);
   --text-page-title: 28px;
   --text-section-title: 18px;
   --text-body: 15px;
