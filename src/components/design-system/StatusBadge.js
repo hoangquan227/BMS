@@ -1,0 +1,86 @@
+import { joinClassNames } from "./utils";
+
+const statusStyles = {
+  "Chưa làm": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Đang làm": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Có rủi ro": "bg-red-50 text-bms-danger ring-red-100",
+  "Tạm dừng": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Chờ khách": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Hoàn thành": "bg-green-50 text-bms-success ring-green-100",
+  "Trễ hạn": "bg-red-50 text-bms-danger ring-red-100",
+  "Thiếu hồ sơ": "bg-red-50 text-bms-danger ring-red-100",
+  "Đã đủ": "bg-green-50 text-bms-success ring-green-100",
+  "Cần kiểm tra": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Nháp": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Đang đánh giá": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Chờ xác nhận": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Chờ duyệt": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Chờ leader duyệt": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Chờ giám đốc duyệt": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Nhân viên xác nhận": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Leader duyệt": "bg-green-50 text-bms-success ring-green-100",
+  "Chờ nhân viên phản hồi": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã xác nhận": "bg-green-50 text-bms-success ring-green-100",
+  "Đã chốt": "bg-green-50 text-bms-success ring-green-100",
+  "Đã hủy": "bg-red-50 text-bms-danger ring-red-100",
+  "Đang áp dụng": "bg-green-50 text-bms-success ring-green-100",
+  "Ngưng áp dụng": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Mới tạo": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Mới ghi nhận": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Đang cải thiện": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã cải thiện": "bg-green-50 text-bms-success ring-green-100",
+  "Cần theo dõi thêm": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Xuất sắc": "bg-green-50 text-bms-success ring-green-100",
+  "Tốt": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Đạt": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Cần cải thiện": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Không đạt": "bg-red-50 text-bms-danger ring-red-100",
+  "Cần hỗ trợ nhiều": "bg-red-50 text-bms-danger ring-red-100",
+  "Cần nhắc nhở": "bg-red-50 text-bms-danger ring-red-100",
+  "Ghi nhận tích cực": "bg-green-50 text-bms-success ring-green-100",
+  "Đóng góp nổi bật": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Lỗi cần sửa": "bg-red-50 text-bms-danger ring-red-100",
+  "Đã gửi": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Đã chấp nhận": "bg-green-50 text-bms-success ring-green-100",
+  "Đã từ chối": "bg-red-50 text-bms-danger ring-red-100",
+  "Đang hiệu lực": "bg-green-50 text-bms-success ring-green-100",
+  "Hết hiệu lực": "bg-slate-100 text-slate-700 ring-slate-200",
+  "Tạm ngưng": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Thanh lý": "bg-red-50 text-bms-danger ring-red-100",
+  "Chờ duyệt": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã duyệt": "bg-green-50 text-bms-success ring-green-100",
+  "Chờ thanh toán": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã thanh toán": "bg-green-50 text-bms-success ring-green-100",
+  "Đủ công": "bg-green-50 text-bms-success ring-green-100",
+  "Thiếu công": "bg-red-50 text-bms-danger ring-red-100",
+  "Đi trễ": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Về sớm": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Nghỉ phép": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Nghỉ không phép": "bg-red-50 text-bms-danger ring-red-100",
+  "Làm việc bên ngoài": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Làm việc từ xa": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Thanh toán một phần": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Quá hạn": "bg-red-50 text-bms-danger ring-red-100",
+  "Đã phát hành": "bg-green-50 text-bms-success ring-green-100",
+  "Chờ ghi nhận": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã ghi nhận": "bg-green-50 text-bms-success ring-green-100",
+  "Cần đối chiếu": "bg-amber-50 text-bms-warning ring-amber-100",
+  "Đã xuất hóa đơn": "bg-green-50 text-bms-success ring-green-100",
+  "Đã gửi hóa đơn": "bg-blue-50 text-bms-primary ring-blue-100",
+  "Đã đối chiếu": "bg-green-50 text-bms-success ring-green-100",
+  "Chưa đối chiếu": "bg-amber-50 text-bms-warning ring-amber-100",
+};
+
+export default function StatusBadge({ status = "Đang làm", className = "" }) {
+  return (
+    <span
+      className={joinClassNames(
+        "inline-flex rounded-bms-pill px-3 py-1 text-sm font-semibold ring-1 transition-colors",
+        statusStyles[status] || "bg-slate-100 text-slate-700 ring-slate-200",
+        className
+      )}
+    >
+      {status}
+    </span>
+  );
+}
