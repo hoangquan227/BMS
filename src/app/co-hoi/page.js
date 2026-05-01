@@ -1,9 +1,9 @@
-import KanbanPage from "../components/KanbanPage";
+import CrmListPage from "../components/CrmListPage";
+import { crmModules } from "../data/crm-data";
 import { pageMetadata } from "../data/page-metadata";
-import { opportunityScreen } from "../data/screens";
 
 export const metadata = pageMetadata["co-hoi"];
 
 export default function Page() {
-  return <KanbanPage screen={opportunityScreen} />;
+  return <CrmListPage module={crmModules.deals} />;
 }
