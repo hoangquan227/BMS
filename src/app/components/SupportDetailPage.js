@@ -1,6 +1,6 @@
 import Link from "next/link";
 import StatusBadge from "../../components/design-system/StatusBadge";
-import { supportMessages } from "../data/support-data";
+import TicketConversation from "./trao-doi-trong-ticket/TicketConversation";
 
 function InfoRow({ label, value, strong = false }) {
   return (
@@ -36,9 +36,14 @@ export default function SupportDetailPage({ ticket }) {
                   <span className="text-[13px] font-bold text-slate-600">{ticket.createdAt}</span>
                 </div>
               </div>
-              <button className="rounded-bms-pill bg-bms-primary px-4 py-2 text-[14px] font-extrabold text-white" type="button">
-                Trả lời
-              </button>
+              <div className="flex flex-wrap gap-2">
+                <button className="rounded-bms-pill bg-bms-primary px-4 py-2 text-[14px] font-extrabold text-white" type="button">
+                  Trả lời khách hàng
+                </button>
+                <button className="rounded-bms-pill border border-slate-300 px-4 py-2 text-[14px] font-extrabold text-slate-800" type="button">
+                  Ghi chú nội bộ
+                </button>
+              </div>
             </div>
           </header>
 
@@ -74,21 +79,7 @@ export default function SupportDetailPage({ ticket }) {
             </div>
           </section>
 
-          <section className="px-4 py-4">
-            <h3 className="mb-4 text-[18px] font-extrabold text-slate-950">Trao đổi xử lý</h3>
-            <div className="space-y-4">
-              {supportMessages.map((message) => (
-                <article className="rounded-[12px] border border-bms-border bg-slate-50 p-3" key={`${message.author}-${message.time}`}>
-                  <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <p className="font-extrabold text-slate-950">{message.author}</p>
-                    <span className="rounded-bms-pill bg-white px-2 py-1 text-[13px] font-bold text-slate-600">{message.role}</span>
-                    <span className="text-[13px] font-semibold text-slate-500">{message.time}</span>
-                  </div>
-                  <p className="text-[14px] font-semibold leading-6 text-slate-800">{message.content}</p>
-                </article>
-              ))}
-            </div>
-          </section>
+          <TicketConversation ticket={ticket} />
         </main>
 
         <aside className="space-y-4">
